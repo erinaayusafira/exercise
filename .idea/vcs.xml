@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/acroca/go-symbols" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/aquilax/go-perlin" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/derekparker/delve" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/eaciit/knot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/go-delve/delve" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/go-sql-driver/mysql" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/golang/lint" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/gorilla/mux" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/karrick/godirwalk" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/nsf/gocode" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/pkg/errors" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/ramya-rao-a/go-outline" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/rogpeppe/godef" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/sqs/goreturns" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/github.com/uudashr/gopkgs" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/golang.org/x/lint" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vendor/golang.org/x/tools" vcs="Git" />
+  </component>
+</project>

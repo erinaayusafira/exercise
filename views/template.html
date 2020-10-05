@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.0/knockout-min.js"></script>
+    <script>
+    var viewResult = {};
+    function ajaxPost(url, payload, callback) {
+        jQuery.ajax({
+            type: "POST",
+            url: url,
+            data: JSON.stringify(payload),
+            success: callback,
+            dataType: "json",
+            contentType: "application/json",
+            processData: false
+        })
+    }
+    </script>
+    <meta charset="UTF-8">
+    <title>Exercise</title>
+</head>
+<body>
+<div>
+    Page Menu:
+    <ul>
+        <li>
+            <a href="/knotbasic/knotajax">Knotbasic</a>
+        </li>
+        <li>
+            <a href="/datetime/datetimeajax">DateTime</a>
+        </li>
+        <li>
+            <a href="/ormdbox/ormdboxajax">OrmDbox</a>
+        </li>
+        <li>
+            <a href="/fileupload/fileuploadajax ">FileUpload</a>
+        </li>
+        <li>
+            <a href="/perlinnoise/perlinajax"> PerlinNoise</a>
+        </li>
+        <li>
+            <a href="fetchgithub/fetchgithubajax">FetchGithub</a>
+        </li>
+        <li>
+            <a href="goroutine/goroutineajax">Goroutine</a>
+        </li>
+    </ul>
+</div>
+
+{{.Content}}
+
+        <script>
+            ko.applyBindings(viewResult)
+        </script>
+</body>
+</html>

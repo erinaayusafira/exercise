@@ -1,0 +1,88 @@
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+<script src="https://code.highcharts.com/stock/highstock.js"></script>
+<script src="https://code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/stock/modules/export-data.js"></script>
+<form id="user-form" method="post" action="/perlinnoise/perlinjson">
+    <input id="req" type="number" width="100px" name="x" placeholder="input x value" required>
+    <input id="req" type="number" width="100px" name="y" placeholder="input y value" required>
+    <br>
+    <button id="posted">Check !</button>
+</form>
+<form>
+    <table noborder>
+        <tr>
+            <td>
+                <div id="ress"></div>
+                <div id="chart"></div>
+                <script>
+                    $(function () {
+                        $("#user-form").on("submit", function (e) {
+                            e.preventDefault();
+                            // console.log(this);
+                            var $self = $(this);
+                            var payload = JSON.stringify({
+                                x : $('[name="y"]').val(),
+                                y : $('[name="x"]').val(),
+
+                            });
+
+                            $.ajax({
+                                url: $self.attr("action"),
+                                type: $self.attr("method"),
+                                data: payload,
+                                contentType: 'application/json',
+                            }).then(function (res) {
+                                $("#ress").html(JSON.stringify(res));
+                                $(function () {
+                                    $('#chart').highcharts({
+                                        chart: {
+                                            type: 'area',
+                                            spacingBottom: 30
+                                        },
+                                        title: {
+                                            text: 'Perlin Noise'
+                                        },
+
+                                        legend: {
+                                            enabled: false
+                                        },
+                                        plotOptions: {
+                                            area: {
+                                                fillOpacity: 0.2
+                                            }
+                                        },
+                                        credits: {
+                                            enabled: false
+                                        },
+                                        tooltip: {
+                                            enabled: false,
+                                        },
+                                        series: [{
+                                            data: res,
+                                            marker: {
+                                                fillColor: '#F39020'
+                                            }
+                                        }]
+                                    });
+                                });
+                            }).catch(function (a) {
+                                alert("ERROR: " + a.responseText);
+                            });
+                        });
+
+                        $(document).ready(function () {
+                            $('#reset').click(function() {
+                                location.reload();
+                            });
+                        })
+                    });
+
+
+                </script>
+
+            </td>
+        </tr>
+
+    </table>
+</form>

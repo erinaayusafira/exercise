@@ -1,0 +1,14 @@
+<div data-bind="foreach : viewResult.data">
+    <div data-bind="text : $data.date"></div>
+</div>
+        <script>
+            viewResult.data = ko.observableArray([]);
+            viewResult.getData = function () {
+                ajaxPost("/datetime/datetimeknockout", null, function (res) {
+                    viewResult.data(res)
+                })
+            };
+            $(function () {
+                viewResult.getData()
+            })
+        </script>

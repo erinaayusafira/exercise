@@ -1,0 +1,12 @@
+<div id="sample"></div>
+
+        <script>
+            viewResult.getData = function () {
+                ajaxPost('/knotbasic/knotjson', null,function (res) {
+                    $('#sample').html(JSON.stringify(res))
+                })
+            };
+            $(function () {
+                viewResult.getData()
+            });
+        </script>
